@@ -212,8 +212,34 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:gravity="center_vertical"
-                                        android:text="Giỏ Hàng"
+                                        android:text="Service"
                                         android:id="@+id/txtgiohang"
+                                        android:layout_marginLeft="30dp"
+                                        android:textColor="#000"
+                                        android:textSize="18dp"
+                                        android:layout_height="40dp"/>
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:padding="5dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="40dp"
+                                        android:layout_marginLeft="20dp"
+                                        android:scaleType="fitXY"
+                                        android:background="#000"
+                                        android:layout_height="40dp"/>
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:gravity="center_vertical"
+                                        android:text="Contact US"
                                         android:layout_marginLeft="30dp"
                                         android:textColor="#000"
                                         android:textSize="18dp"
@@ -239,7 +265,7 @@
                                         android:layout_marginLeft="20dp"
                                         android:textColor="#000"
                                         android:layout_marginTop="10dp"
-                                        android:text="Thông Tin"
+                                        android:text="Information"
                                         android:layout_height="wrap_content"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -255,7 +281,7 @@
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:gravity="center_vertical"
-                                            android:text="Tài Khoản"
+                                            android:text="Account"
                                             android:id="@+id/txttaikhoan"
                                             android:layout_marginLeft="30dp"
                                             android:textColor="#000"
@@ -283,7 +309,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:gravity="center_vertical"
-                                        android:text="Đơn Hàng "
+                                        android:text="Purchase Orders"
                                         android:layout_marginLeft="30dp"
                                         android:id="@+id/txtdonhang"
                                         android:textColor="#000"
@@ -310,7 +336,7 @@
                                         android:layout_marginLeft="20dp"
                                         android:textColor="#000"
                                         android:layout_marginTop="10dp"
-                                        android:text="Khác"
+                                        android:text="Other"
                                         android:layout_height="wrap_content"/>
                                     <LinearLayout
                                         android:layout_width="match_parent"
@@ -327,7 +353,7 @@
                                         <TextView
                                             android:layout_width="match_parent"
                                             android:gravity="center_vertical"
-                                            android:text="Đăng Xuất"
+                                            android:text="Log out"
                                             android:id="@+id/txtdangxuat"
                                             android:layout_marginLeft="30dp"
                                             android:textColor="#000"
