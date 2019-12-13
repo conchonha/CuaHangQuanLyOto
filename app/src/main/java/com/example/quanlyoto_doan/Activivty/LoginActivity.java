@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                                     editor.putString("phoneNumBer",arrayList.get(0).getPhonenumber());
                                     editor.putString("identityCard",arrayList.get(0).getIdentitycard());
                                     editor.putString("picture",arrayList.get(0).getPicture());
+                                    editor.putInt("idacount",arrayList.get(0).getId());
                                     editor.commit();
                                 }else{
                                     Toast.makeText(LoginActivity.this, "Not have data ", Toast.LENGTH_SHORT).show();

@@ -32,4 +32,8 @@ public interface DataService {
                             @Field("phoneNumBer") String phoneNumBer,
                             @Field("identityCard") String identityCard,
                             @Field("idType") String idType);
+
+    @FormUrlEncoded
+    @POST("model/vehicleInformation/checkAcount")
+    Call<String>checkAcount(@Field("idAcount") String idAcount);
 }

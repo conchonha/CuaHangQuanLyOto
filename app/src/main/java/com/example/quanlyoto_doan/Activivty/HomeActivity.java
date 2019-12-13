@@ -20,7 +20,8 @@ public class HomeActivity extends AppCompatActivity {
     private DrawerLayout drawerlayout;
     private ViewPager viewpagermain;
     private Runnable runnable;
-    private TextView txtNameCustomer,txtEmail,txtLogout,txtAccessoriesForCard;
+    private TextView txtNameCustomer,txtEmail,txtLogout,txtAccessoriesForCard,
+            txtservices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,12 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setInitNavigationView() {
+        txtservices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Services.class));
+            }
+        });
         txtAccessoriesForCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +100,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void init() {
+        txtservices=findViewById(R.id.txtservices);
         txtAccessoriesForCard=findViewById(R.id.txtAccessoriesForCard);
         txtEmail=findViewById(R.id.txtgmail);
         viewpagermain=findViewById(R.id.viewpagermain);
