@@ -12,11 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activivty.RegisterVerhicleInfomation"></activity>
+        <activity android:name=".Activivty.ProductDetails"></activity>
+        <activity android:name=".Activivty.RegisterVerhicleInfomation" />
         <activity android:name=".Activivty.Services" />
         <activity android:name=".Activivty.ProductActivity" />
         <activity android:name=".Activivty.HomeActivity" />
-        <activity android:name=".Activivty.LoginActivity" />
+        <activity android:name=".Activivty.LoginActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity android:name=".Activivty.RegisterActivity" />
         <activity android:name=".Activivty.MainActivity">
             <intent-filter>

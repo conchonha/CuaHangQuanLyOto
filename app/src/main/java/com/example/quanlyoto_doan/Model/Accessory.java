@@ -3,7 +3,9 @@ package com.example.quanlyoto_doan.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Accessory {
+import java.io.Serializable;
+
+public class Accessory implements Serializable {
 
 
     @SerializedName("id")

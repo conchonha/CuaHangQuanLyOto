@@ -2,6 +2,7 @@ package com.example.quanlyoto_doan.Service;
 
 import com.example.quanlyoto_doan.Model.Accessory;
 import com.example.quanlyoto_doan.Model.Account;
+import com.example.quanlyoto_doan.Model.VerhicleInfomation;
 
 import java.util.List;
 
@@ -35,5 +36,22 @@ public interface DataService {
 
     @FormUrlEncoded
     @POST("model/vehicleInformation/checkAcount")
-    Call<String>checkAcount(@Field("idAcount") String idAcount);
+    Call<List<VerhicleInfomation>>checkAcount(@Field("idAcount") String idAcount);
+
+    @FormUrlEncoded
+    @POST("model/vehicleInformation/RegisterVehicleInfomation")
+    Call<String>RegisterVehicleInfomation(@Field("producer") String producer,
+                                          @Field("type") String type,
+                                          @Field("capacity") String capacity,
+                                          @Field("contermet") String contermet,
+                                          @Field("idacount") String idacount);
+
+    @FormUrlEncoded
+    @POST("model/vehicleInformation/UpdateVehicleInfomation")
+    Call<String>UpdateVehicleInfomation(@Field("producer") String producer,
+                                          @Field("type") String type,
+                                          @Field("capacity") String capacity,
+                                          @Field("contermet") String contermet,
+                                          @Field("idcar") String idacount);
+
 }

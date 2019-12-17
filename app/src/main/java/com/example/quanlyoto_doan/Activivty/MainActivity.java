@@ -3,13 +3,21 @@ package com.example.quanlyoto_doan.Activivty;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.quanlyoto_doan.Adapter.Main_Adapter;
 import com.example.quanlyoto_doan.Fragment.Fragment_Slider1;
 import com.example.quanlyoto_doan.Fragment.Fragment_Slider2;
 import com.example.quanlyoto_doan.Fragment.Fragment_Slider3;
 import com.example.quanlyoto_doan.R;
+import com.example.quanlyoto_doan.Service.APIServices;
+import com.example.quanlyoto_doan.Service.DataService;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager mainviewpager;
@@ -18,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        anhxa();
+            anhxa();
     }
+
 
     private void anhxa() {
         mainviewpager=findViewById(R.id.mainviewpager);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Avdi"
+        android:id="@+id/avdi"/>
+    <item android:title="Mercerdes Benz"
+        android:id="@+id/mercerdesbenz"/>
+    <item android:title="Honda"
+        android:id="@+id/honda"/>
+    <item android:title="Yamaha"
+        android:id="@+id/yamaha"/>
+    <item android:title="Toyota"
+        android:id="@+id/toyota"/>
+    <item android:title="Suzuki"
+        android:id="@+id/suzuki"/>
+</menu>

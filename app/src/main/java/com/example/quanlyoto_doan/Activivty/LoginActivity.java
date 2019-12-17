@@ -78,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<List<Account>> call, Throwable t) {
                             Log.d("AAA","erroLogin: "+t.toString());
+                            Toast.makeText(LoginActivity.this, "Not have data ", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

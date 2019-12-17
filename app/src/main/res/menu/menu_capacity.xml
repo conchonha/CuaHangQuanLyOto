@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="10"
+        android:id="@+id/muoi"/>
+    <item android:title="20"
+        android:id="@+id/haimuoi"/>
+    <item android:title="30"
+        android:id="@+id/bamuoi"/>
+    <item android:title="40"
+        android:id="@+id/bonmuoi"/>
+    <item android:title="50"
+        android:id="@+id/nammuoi"/>
+</menu>

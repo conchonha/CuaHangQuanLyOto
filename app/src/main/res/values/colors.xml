@@ -7,5 +7,6 @@
     <color name="editTextBG">#DADADA</color>
     <color name="textColor">#6e6e6e</color>
     <color name="transparent">#00000000</color>
+    <color name="mauden">#000</color>
 
 </resources>
