@@ -2,6 +2,8 @@ package com.example.quanlyoto_doan.Service;
 
 import com.example.quanlyoto_doan.Model.Accessory;
 import com.example.quanlyoto_doan.Model.Account;
+import com.example.quanlyoto_doan.Model.PutForService;
+import com.example.quanlyoto_doan.Model.Service;
 import com.example.quanlyoto_doan.Model.VerhicleInfomation;
 
 import java.util.List;
@@ -54,4 +56,24 @@ public interface DataService {
                                           @Field("contermet") String contermet,
                                           @Field("idcar") String idacount);
 
+    @FormUrlEncoded
+    @POST("model/services/getDataPutServices")
+    Call<List<PutForService>>getDataPutServices(@Field("id") String idtaikhoan,
+                                                @Field("loai") String loai);
+
+    @GET("model/account/getData")
+    Call<List<Account>>getDataManagerAccount();
+
+    @GET("model/services/getDataServices")
+    Call<List<Service>>getDataListServices();
+
+    @FormUrlEncoded
+    @POST("model/services/registerServices")
+    Call<String>registerServices(@Field("putdate") String putdate,
+                                 @Field("time") String time,
+                                 @Field("speedometer") String speedometer,
+                                 @Field("note") String note,
+                                 @Field("type") String type,
+                                 @Field("address") String address,
+                                 @Field("idacount") String idacount);
 }

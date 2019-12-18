@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     private ViewPager viewpagermain;
     private Runnable runnable;
     private TextView txtNameCustomer,txtEmail,txtLogout,txtAccessoriesForCard,
-            txtservices,txtVehicleInfomation;
+            txtservices,txtVehicleInfomation,txtContactUs;
     public static SharedPreferences sharedPreferences;
     public static SharedPreferences.Editor editor;
 
@@ -76,6 +76,12 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setInitNavigationView() {
+        txtContactUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Contact_Activity.class));
+            }
+        });
         txtVehicleInfomation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -150,6 +156,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void init() {
+        txtContactUs=findViewById(R.id.txtContactUs);
         sharedPreferences=getSharedPreferences("vehicleinfomation",MODE_PRIVATE);
         editor=sharedPreferences.edit();
         txtservices=findViewById(R.id.txtservices);

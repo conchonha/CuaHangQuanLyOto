@@ -28,10 +28,22 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         init();
-        signup();
+        Intent intent=getIntent();
+        if(intent!=null){
+            if(intent.hasExtra("Customer")){
+                signup(0);
+            }else if(intent.hasExtra("Employees")){
+                signup(3);
+            }else if(intent.hasExtra("loyalcustomers")){
+                signup(1);
+            }else{
+                signup(0);
+            }
+
+        }
     }
 
-    private void signup() {
+    private void signup(final int id) {
         btnSignupRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                             edtEmailRegister.getText().toString(),
                             edtPhoneNumberRegister.getText().toString(),
                             edtIndentityCard.getText().toString(),
-                            "0");
+                            id+"");
                     callback.enqueue(new Callback<String>() {
                         @Override
                         public void onResponse(Call<String> call, Response<String> response) {

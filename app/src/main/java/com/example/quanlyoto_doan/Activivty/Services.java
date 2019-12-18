@@ -10,10 +10,13 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.quanlyoto_doan.Adapter.ListServices_Adapter;
 import com.example.quanlyoto_doan.R;
 import com.example.quanlyoto_doan.Service.APIServices;
 import com.example.quanlyoto_doan.Service.DataService;
@@ -26,7 +29,9 @@ import retrofit2.Response;
 
 public class Services extends AppCompatActivity {
     private Toolbar tollbarServiecs;
-    private TextView txtDate,txtTime;
+    private TextView txtDate,txtTime,txtTypeServices,txtSpeedDometter;
+    private EditText txtNode,edtAddress;
+    private Button btnRegisterServices;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,43 @@ public class Services extends AppCompatActivity {
         init();
         setActionbar();
         setOnclickView();
+        registerServices();
+    }
+
+    private void registerServices() {
+        btnRegisterServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(txtDate.getText().toString().equals("") || txtTime.getText().toString().equals("") ||
+                txtTypeServices.getText().toString().equals("") || txtSpeedDometter.getText().toString().equals("")
+                || txtNode.getText().toString().equals("") || edtAddress.getText().toString().equals("") ||
+                ListServices_Adapter.type==0){
+                    Toast.makeText(Services.this, "Data not be blank", Toast.LENGTH_SHORT).show();
+                }else{
+                    DataService dataService=APIServices.getService();
+                    Call<String>callback=dataService.registerServices(txtDate.getText().toString(),
+                            txtTime.getText().toString(),txtSpeedDometter.getText().toString(),
+                            txtNode.getText().toString(),ListServices_Adapter.type+"",edtAddress.getText().toString(),
+                            LoginActivity.sharedPreferences.getInt("idacount",0)+"");
+                    callback.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(Call<String> call, Response<String> response) {
+                            Log.d("AAA","registerServices: "+response.toString());
+                            if(response.isSuccessful()){
+                                Toast.makeText(Services.this, "Register Succes", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<String> call, Throwable t) {
+                            Log.d("AAA","Erro: "+t.toString());
+                        }
+                    });
+
+                }
+            }
+        });
     }
 
     private void setOnclickView() {
@@ -59,6 +101,14 @@ public class Services extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+        txtTypeServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),List_Services.class));
+                txtTypeServices.setText(ListServices_Adapter.Name+"");
+            }
+        });
+        txtSpeedDometter.setText(HomeActivity.sharedPreferences.getInt("contermet",0)+"");
     }
 
     private void setActionbar() {
@@ -74,9 +124,14 @@ public class Services extends AppCompatActivity {
     }
 
     private void init() {
+        txtSpeedDometter=findViewById(R.id.txtSpeedDometter);
+        txtTypeServices=findViewById(R.id.txtTypeServices);
         txtTime=findViewById(R.id.txtTime);
         tollbarServiecs=findViewById(R.id.tollbarServiecs);
         txtDate=findViewById(R.id.txtDate);
+        txtNode=findViewById(R.id.txtNode);
+        edtAddress=findViewById(R.id.edtAddress);
+        btnRegisterServices=findViewById(R.id.btnRegisterServices);
     }
 
 

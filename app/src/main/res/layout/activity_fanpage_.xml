@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activivty.ProductActivity">
+    android:layout_height="match_parent"
+    tools:context=".Activivty.Fanpage_Activity">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:background="@color/toolbar"
-        app:title="Accessories"
-        android:id="@+id/toolBarProduct"
         app:titleTextColor="#fff"
+        app:title="Fanpage"
+        android:id="@+id/tollBarFanpage"
         android:layout_height="wrap_content"/>
-    <androidx.recyclerview.widget.RecyclerView
+    <WebView
         android:layout_width="match_parent"
-        android:id="@+id/recyclerviewProduct"
+        android:id="@+id/webview"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

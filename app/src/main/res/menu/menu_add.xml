@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="More account"/>
+    <item android:title="Customer"
+        android:id="@+id/menuCustomer"/>
+    <item android:title="Employees"
+        android:id="@+id/menuEmployees"/>
+    <item android:title="Loyal Customers"
+        android:id="@+id/loyalcustomers"/>
+</menu>

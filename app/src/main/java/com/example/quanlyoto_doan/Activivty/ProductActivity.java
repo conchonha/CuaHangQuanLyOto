@@ -12,7 +12,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.quanlyoto_doan.Adapter.Accessories_Adapter;
+import com.example.quanlyoto_doan.Adapter.PutServices_Adapter;
 import com.example.quanlyoto_doan.Model.Accessory;
+import com.example.quanlyoto_doan.Model.PutForService;
 import com.example.quanlyoto_doan.R;
 import com.example.quanlyoto_doan.Service.APIServices;
 import com.example.quanlyoto_doan.Service.DataService;
@@ -38,7 +40,40 @@ public class ProductActivity extends AppCompatActivity {
             if(intent.hasExtra("typeProduct")){
                 getDataAccessories();
             }
+            if(intent.hasExtra("PutServices")){
+                getDataPutServices();
+            }
         }
+    }
+    private void setRecyclerView(ArrayList<PutForService>arrayList) {
+        toolBarProduct.setTitle("History Services");
+        recyclerviewProduct=findViewById(R.id.recyclerviewProduct);
+        recyclerviewProduct.setHasFixedSize(true);
+        recyclerviewProduct.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+        PutServices_Adapter adapter=new PutServices_Adapter(getApplicationContext(),R.layout.layout_putforservices,arrayList);
+        recyclerviewProduct.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+    }
+    private void getDataPutServices() {
+        DataService dataServics = APIServices.getService();
+        Call<List<PutForService>>callback=dataServics.getDataPutServices(LoginActivity.sharedPreferences.
+                getInt("idacount",0)+"","1");
+        callback.enqueue(new Callback<List<PutForService>>() {
+            @Override
+            public void onResponse(Call<List<PutForService>> call, Response<List<PutForService>> response) {
+                Log.d("AAA","getDataPutServices: "+response.toString());
+                if(response.isSuccessful()){
+                    Log.d("AAA","getDataPutServices: "+response.body());
+                    ArrayList<PutForService>arrayList= (ArrayList<PutForService>) response.body();
+                    setRecyclerView(arrayList);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<PutForService>> call, Throwable t) {
+
+            }
+        });
     }
 
     private void setActionBar() {

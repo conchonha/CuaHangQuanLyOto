@@ -58,17 +58,34 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, "Login Succsess", Toast.LENGTH_SHORT).show();
                                 ArrayList<Account>arrayList= (ArrayList<Account>) response.body();
                                 if(arrayList.size()>0){
-                                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                                    editor.putString("cusTomer","Customer");
-                                    editor.putString("fullName",arrayList.get(0).getFullname());
-                                    editor.putString("userName",arrayList.get(0).getUsername());
-                                    editor.putString("passWord",arrayList.get(0).getPassword());
-                                    editor.putString("email",arrayList.get(0).getEmail());
-                                    editor.putString("phoneNumBer",arrayList.get(0).getPhonenumber());
-                                    editor.putString("identityCard",arrayList.get(0).getIdentitycard());
-                                    editor.putString("picture",arrayList.get(0).getPicture());
-                                    editor.putInt("idacount",arrayList.get(0).getId());
-                                    editor.commit();
+                                    if(arrayList.get(0).getIdloai()==2){
+                                        startActivity(new Intent(getApplicationContext(),Admin_Activity.class));
+                                        editor.remove("cusTomer");
+                                        editor.putString("admin","admin");
+                                        editor.putString("fullName",arrayList.get(0).getFullname());
+                                        editor.putString("userName",arrayList.get(0).getUsername());
+                                        editor.putString("passWord",arrayList.get(0).getPassword());
+                                        editor.putString("email",arrayList.get(0).getEmail());
+                                        editor.putString("phoneNumBer",arrayList.get(0).getPhonenumber());
+                                        editor.putString("identityCard",arrayList.get(0).getIdentitycard());
+                                        editor.putString("picture",arrayList.get(0).getPicture());
+                                        editor.putInt("idacount",arrayList.get(0).getId());
+                                        editor.commit();
+                                    }else{
+                                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                                        editor.putString("cusTomer","Customer");
+                                        editor.remove("admin");
+                                        editor.putString("fullName",arrayList.get(0).getFullname());
+                                        editor.putString("userName",arrayList.get(0).getUsername());
+                                        editor.putString("passWord",arrayList.get(0).getPassword());
+                                        editor.putString("email",arrayList.get(0).getEmail());
+                                        editor.putString("phoneNumBer",arrayList.get(0).getPhonenumber());
+                                        editor.putString("identityCard",arrayList.get(0).getIdentitycard());
+                                        editor.putString("picture",arrayList.get(0).getPicture());
+                                        editor.putInt("idacount",arrayList.get(0).getId());
+                                        editor.commit();
+                                    }
+
                                 }else{
                                     Toast.makeText(LoginActivity.this, "Not have data ", Toast.LENGTH_SHORT).show();
                                 }
@@ -92,6 +109,10 @@ public class LoginActivity extends AppCompatActivity {
         if(!sharedPreferences.getString("cusTomer","").equals("")){
            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
            finish();
+        }
+        if(!sharedPreferences.getString("admin","").equals("")){
+            startActivity(new Intent(getApplicationContext(),Admin_Activity.class));
+            finish();
         }
         edtPassWord=findViewById(R.id.edtPassWord);
         edtUserName=findViewById(R.id.edtUserName);

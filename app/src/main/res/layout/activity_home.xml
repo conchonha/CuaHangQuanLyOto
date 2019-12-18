@@ -7,16 +7,16 @@
     android:layout_height="match_parent"
     android:background="#796F6F"
     >
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="wrap_content">
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
-                android:background="#000"
+                android:background="@color/toolbar"
                 app:title=" "
                 android:overScrollMode="always"
                 android:id="@+id/toolbarMain"
@@ -49,50 +49,65 @@
                 </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_below="@+id/toolbarMain"
-                app:cardBackgroundColor="#fff"
-                android:id="@+id/card1"
-                android:background="#fff"
-                android:layout_height="230dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="vertical"
-                    android:layout_height="match_parent">
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <androidx.viewpager.widget.ViewPager
-                            android:layout_width="match_parent"
-                            android:id="@+id/viewpagermain"
-                            android:layout_height="220dp"/>
-                        <com.rd.PageIndicatorView
-                            android:layout_width="wrap_content"
-                            app:piv_animationType="swap"
-                            app:piv_dynamicCount="true"
-                            app:piv_selectedColor="#FC0505"
-                            app:piv_unselectedColor="#000"
-                            app:piv_padding="3dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_margin="20dp"
-                            app:piv_viewPager="@+id/viewpagermain"
-                            android:layout_height="wrap_content"/>
-                    </RelativeLayout>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <fragment
-                android:layout_width="match_parent"
-                android:layout_below="@+id/card1"
-                android:layout_marginTop="10dp"
-                android:name="com.example.quanlyoto_doan.Fragment.FragmentAccessories"
-                android:id="@+id/fragmentAccessories"
-                android:layout_height="match_parent"/>
-
         </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardBackgroundColor="#fff"
+                    android:id="@+id/card1"
+                    android:background="#fff"
+                    android:layout_height="230dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <androidx.viewpager.widget.ViewPager
+                                android:layout_width="match_parent"
+                                android:id="@+id/viewpagermain"
+                                android:layout_height="220dp"/>
+                            <com.rd.PageIndicatorView
+                                android:layout_width="wrap_content"
+                                app:piv_animationType="swap"
+                                app:piv_dynamicCount="true"
+                                app:piv_selectedColor="#FC0505"
+                                app:piv_unselectedColor="#000"
+                                app:piv_padding="3dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="20dp"
+                                app:piv_viewPager="@+id/viewpagermain"
+                                android:layout_height="wrap_content"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/card1"
+                    android:layout_marginTop="10dp"
+                    android:name="com.example.quanlyoto_doan.Fragment.FragmentAccessories"
+                    android:id="@+id/fragmentAccessories"
+                    android:layout_height="match_parent"/>
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/fragmentAccessories"
+                    android:layout_marginTop="10dp"
+                    android:name="com.example.quanlyoto_doan.Fragment.Fragment_PutForServices"
+                    android:id="@+id/fragmentPutForServices"/>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:layout_width="match_parent"
         android:layout_gravity="start"
@@ -242,6 +257,7 @@
                                         android:text="Contact US"
                                         android:layout_marginLeft="30dp"
                                         android:textColor="#000"
+                                        android:id="@+id/txtContactUs"
                                         android:textSize="18dp"
                                         android:layout_height="40dp"/>
                                 </LinearLayout>

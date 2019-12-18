@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activivty.ProductActivity">
+    tools:context=".Activivty.List_Services">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:background="@color/toolbar"
-        app:title="Accessories"
-        android:id="@+id/toolBarProduct"
         app:titleTextColor="#fff"
+        app:title="List Services"
+        android:id="@+id/toolBarListServices"
         android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:id="@+id/recyclerviewProduct"
+        android:id="@+id/recyclerViewListServices"
         android:layout_height="match_parent"/>
 
 </LinearLayout>

@@ -5,104 +5,126 @@ import com.google.gson.annotations.SerializedName;
 
 public class PutForService {
 
-@SerializedName("id")
-@Expose
-private Integer id;
-@SerializedName("putdate")
-@Expose
-private String putdate;
-@SerializedName("time")
-@Expose
-private String time;
-@SerializedName("speedometer")
-@Expose
-private Integer speedometer;
-@SerializedName("note")
-@Expose
-private String note;
-@SerializedName("type")
-@Expose
-private String type;
-@SerializedName("price")
-@Expose
-private Integer price;
-@SerializedName("address")
-@Expose
-private String address;
-@SerializedName("idacount")
-@Expose
-private Integer idacount;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("putdate")
+    @Expose
+    private String putdate;
+    @SerializedName("time")
+    @Expose
+    private String time;
+    @SerializedName("speedometer")
+    @Expose
+    private Integer speedometer;
+    @SerializedName("note")
+    @Expose
+    private String note;
+    @SerializedName("type")
+    @Expose
+    private Integer type;
+    @SerializedName("address")
+    @Expose
+    private String address;
+    @SerializedName("idacount")
+    @Expose
+    private Integer idacount;
+    @SerializedName("nameservices")
+    @Expose
+    private String nameservices;
+    @SerializedName("priceservices")
+    @Expose
+    private Integer priceservices;
+    @SerializedName("pictureicon")
+    @Expose
+    private String pictureicon;
 
-public Integer getId() {
-return id;
-}
+    public Integer getId() {
+        return id;
+    }
 
-public void setId(Integer id) {
-this.id = id;
-}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-public String getPutdate() {
-return putdate;
-}
+    public String getPutdate() {
+        return putdate;
+    }
 
-public void setPutdate(String putdate) {
-this.putdate = putdate;
-}
+    public void setPutdate(String putdate) {
+        this.putdate = putdate;
+    }
 
-public String getTime() {
-return time;
-}
+    public String getTime() {
+        return time;
+    }
 
-public void setTime(String time) {
-this.time = time;
-}
+    public void setTime(String time) {
+        this.time = time;
+    }
 
-public Integer getSpeedometer() {
-return speedometer;
-}
+    public Integer getSpeedometer() {
+        return speedometer;
+    }
 
-public void setSpeedometer(Integer speedometer) {
-this.speedometer = speedometer;
-}
+    public void setSpeedometer(Integer speedometer) {
+        this.speedometer = speedometer;
+    }
 
-public String getNote() {
-return note;
-}
+    public String getNote() {
+        return note;
+    }
 
-public void setNote(String note) {
-this.note = note;
-}
+    public void setNote(String note) {
+        this.note = note;
+    }
 
-public String getType() {
-return type;
-}
+    public Integer getType() {
+        return type;
+    }
 
-public void setType(String type) {
-this.type = type;
-}
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
-public Integer getPrice() {
-return price;
-}
+    public String getAddress() {
+        return address;
+    }
 
-public void setPrice(Integer price) {
-this.price = price;
-}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-public String getAddress() {
-return address;
-}
+    public Integer getIdacount() {
+        return idacount;
+    }
 
-public void setAddress(String address) {
-this.address = address;
-}
+    public void setIdacount(Integer idacount) {
+        this.idacount = idacount;
+    }
 
-public Integer getIdacount() {
-return idacount;
-}
+    public String getNameservices() {
+        return nameservices;
+    }
 
-public void setIdacount(Integer idacount) {
-this.idacount = idacount;
-}
+    public void setNameservices(String nameservices) {
+        this.nameservices = nameservices;
+    }
+
+    public Integer getPriceservices() {
+        return priceservices;
+    }
+
+    public void setPriceservices(Integer priceservices) {
+        this.priceservices = priceservices;
+    }
+
+    public String getPictureicon() {
+        return pictureicon;
+    }
+
+    public void setPictureicon(String pictureicon) {
+        this.pictureicon = pictureicon;
+    }
 
 }

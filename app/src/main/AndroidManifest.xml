@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activivty.ProductDetails"></activity>
+        <activity android:name=".Activivty.List_Services"></activity>
+        <activity android:name=".Activivty.Contact_Activity" />
+        <activity android:name=".Activivty.ManagementAccount_Activity" />
+        <activity android:name=".Activivty.Fanpage_Activity" />
+        <activity android:name=".Activivty.Admin_Activity" />
+        <activity android:name=".Activivty.ProductDetails" />
         <activity android:name=".Activivty.RegisterVerhicleInfomation" />
         <activity android:name=".Activivty.Services" />
         <activity android:name=".Activivty.ProductActivity" />
